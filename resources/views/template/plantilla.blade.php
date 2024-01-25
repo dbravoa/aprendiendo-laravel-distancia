@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('titulo')</title>
+    {{-- <script src="https://cdn.tailwindcss.com"></script> --}}
 </head>
 
 <body>
     <header>
         <nav>
             <ul>
-                <li>Lista de Facturas</li>
-                <li>Crear Facturas</li>
+                <li><a href="{{ route('facturas.index') }}">Lista de Facturas</a></li>
+                <li><a href="{{ route('facturas.create') }}">Crear Facturas</a></li>
             </ul>
         </nav>
     </header>

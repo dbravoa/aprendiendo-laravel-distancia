@@ -11,4 +11,13 @@ class Factura extends Model
 
     /* Configurando por el nombre de la tabla a la que pertenece el modelo */
     // protected $table="comprobantes";
+
+    /*     protected $fillable =
+    [
+        'cliente',
+        'monto_total',
+        'igv',
+        'empresa_facturadora'
+    ]; */
+    protected $guarded = [];
 }

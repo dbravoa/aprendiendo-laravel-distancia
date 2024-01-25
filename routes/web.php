@@ -19,19 +19,19 @@ Route::get('/', HomeController::class);
 
 Route::controller(FacturaController::class)->group(function () {
 
-    Route::get('/facturas',  'index');
+    Route::get('/facturas',  'index')->name('facturas.index');
 
-    Route::get('/facturas/crear',  'create');
+    Route::get('/facturas/crear',  'create')->name('facturas.create');
 
-    Route::get('facturas/actualizar/{id}',  'update');
+    Route::get('facturas/{factura}/edit',  'edit')->name('facturas.edit');
 
-    Route::get('facturas/anio/{anio?}',  'facturaPorAnio');
+    #Route::get('facturas/anio/{anio?}',  'facturaPorAnio')->name('facturas.facturasPorAnio');
 
-    Route::get('/facturas/{id}',  'show');
+    Route::get('/facturas/{factura}',  'show')->name('facturas.show');
 
-    Route::post('/facturas',  'proccess');
+    Route::post('/facturas',  'store')->name('facturas.store');
 
-    Route::put('/facturas',  'updateAll');
+    Route::put('/facturas/{factura}', 'update')->name('facturas.update');
 
-    Route::delete('/facturas',  'deleteAll');
+    Route::delete('facturas/{factura}', 'destroy')->name('facturas.destroy');
 });
